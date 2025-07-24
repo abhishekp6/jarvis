@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import { questions } from './data/questions'
 import { getTravelRecommendations, type Answers, type Recommendation } from './lib/llm'
 import { getDynamicTheme, getThemeEmoji, getPersonalizedMessage } from './lib/themeUtils'
-import { getFeedbackMessage, getProgressEncouragement } from './lib/feedbackMessages'
+import { getProgressEncouragement } from './lib/feedbackMessages'
 import { QuizStep } from './components/QuizStep'
 import { ResultScreen } from './components/ResultScreen'
 import { ProgressBar } from './components/ProgressBar'
-import { FeedbackMessage } from './components/FeedbackMessage'
 
 function App() {
   const [currentStep, setCurrentStep] = useState(0)
@@ -14,8 +13,6 @@ function App() {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [showResults, setShowResults] = useState(false)
-  const [feedbackMessage, setFeedbackMessage] = useState('')
-  const [showFeedback, setShowFeedback] = useState(false)
 
   // Console logging for debugging
   useEffect(() => {
@@ -30,7 +27,7 @@ function App() {
     
     setAnswers(newAnswers)
     
-    // Remove feedback show/hide
+    // Quick transition to next step
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1)
     } else {
@@ -62,11 +59,6 @@ function App() {
     setRecommendations([])
     setShowResults(false)
     setIsLoading(false)
-    setShowFeedback(false)
-  }
-
-  const handleFeedbackComplete = () => {
-    setShowFeedback(false)
   }
 
   const currentTheme = getDynamicTheme(answers)
@@ -121,13 +113,6 @@ function App() {
           </p>
         </div>
       </div>
-      
-      {/* Feedback Message */}
-      <FeedbackMessage
-        message={feedbackMessage}
-        isVisible={showFeedback}
-        onComplete={handleFeedbackComplete}
-      />
     </div>
   )
 }
