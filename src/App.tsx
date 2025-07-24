@@ -28,22 +28,14 @@ function App() {
     const questionId = questions[currentStep].id
     const newAnswers = { ...answers, [questionId]: value }
     
-    console.log(`📝 Q${currentStep + 1}: ${questions[currentStep].text} → ${value}`)
     setAnswers(newAnswers)
-
-    // Show positive feedback
-    const message = getFeedbackMessage(questionId, value)
-    setFeedbackMessage(message)
-    setShowFeedback(true)
-
-    // Auto-advance to next question after feedback
-    setTimeout(() => {
-      if (currentStep < questions.length - 1) {
-        setCurrentStep(currentStep + 1)
-      } else {
-        handleQuizComplete(newAnswers)
-      }
-    }, 2500) // Longer delay to show feedback
+    
+    // Remove feedback show/hide
+    if (currentStep < questions.length - 1) {
+      setCurrentStep(currentStep + 1)
+    } else {
+      handleQuizComplete(newAnswers)
+    }
   }
 
   const handleQuizComplete = async (finalAnswers: Answers) => {
@@ -140,4 +132,4 @@ function App() {
   )
 }
 
-export default App 
+export default App
