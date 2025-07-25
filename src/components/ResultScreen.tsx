@@ -56,7 +56,7 @@ export const ResultScreen = ({ recommendations, onRetry, isLoading }: ResultScre
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
           Your Travel Recommendations
         </h2>
-        <p className="text-white/90 text-lg">Based on your preferences, here are 3 destinations perfect for you:</p>
+        <p className="text-white/90 text-lg">Based on your preferences, here are 5 destinations perfect for you:</p>
         <div className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
       </div>
       

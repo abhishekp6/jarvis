@@ -10,13 +10,16 @@ export interface Answers {
 const buildPrompt = (answers: Answers): string => {
   const { who, vibe, location, popularity, budget, duration, activity } = answers
   
-  return `Suggest 3 travel destinations for a ${who} who wants a ${vibe} trip, ${location}, ${popularity} spots, ${budget} budget, for ${duration}, with ${activity} activity level. 
+  return `Suggest top 5 travel destinations for a ${who} who wants a ${vibe} trip, ${location}, ${popularity} spots, ${budget} budget, for ${duration}, with ${activity} activity level. 
   
   For each destination, provide:
   1. Destination name
   2. One-line explanation of why it fits their preferences
   
-  Format as JSON array with "destination" and "explanation" fields.`
+  Format as JSON array with "destination" and "explanation" fields.
+  Note following context:
+  1. 'Domestic' means inside India.
+  `
 }
 
 const mockRecommendations: Recommendation[] = [
