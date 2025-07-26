@@ -33,10 +33,10 @@ export const ResultScreen = ({ recommendations, onRetry, isLoading }: ResultScre
           </div>
           
           <h3 className="text-3xl font-bold text-white mb-4 animate-gentle-wave">
-            ✈️ Finding Your Perfect Destinations
+            🤔 Let me think...
           </h3>
           <p className="text-white/90 text-lg mb-6">
-            Exploring the world's most amazing places for you...
+            I'm carefully selecting the perfect destinations that match your preferences...
           </p>
           
           {/* Progress dots */}
@@ -46,6 +46,10 @@ export const ResultScreen = ({ recommendations, onRetry, isLoading }: ResultScre
             <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
           </div>
         </div>
+
+        <p className="text-white/50 text-sm mt-8">
+          Analyzing with Gemini Nano 🤖
+        </p>
       </div>
     )
   }
@@ -54,11 +58,23 @@ export const ResultScreen = ({ recommendations, onRetry, isLoading }: ResultScre
     <div className="animate-fade-in-scale max-w-4xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-          Your Travel Recommendations
+          I've Found Perfect Places For You!
         </h2>
-        <p className="text-white/90 text-lg">Based on your preferences, here are 5 destinations perfect for you:</p>
+        <p className="text-white/90 text-lg">Based on what you've told me, I think you'll love these destinations:</p>
         <div className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
       </div>
+
+      {/* Loading state */}
+      {isLoading && (
+        <div className="text-center">
+          <h3 className="text-3xl font-bold text-white mb-4 animate-gentle-wave">
+            Let me think about this... 🤔
+          </h3>
+          <p className="text-white/90 text-lg">
+            I'm carefully selecting the perfect destinations for you...
+          </p>
+        </div>
+      )}
       
       <div className="grid gap-6 mb-12">
         {recommendations.map((rec, index) => (
@@ -90,9 +106,15 @@ export const ResultScreen = ({ recommendations, onRetry, isLoading }: ResultScre
           className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
         >
           <RefreshCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" />
-          <span className="font-semibold text-lg">Start New Quiz</span>
+          <span className="font-semibold text-lg">Let's Plan Another Trip!</span>
         </button>
+      </div>
+
+      <div className="text-center mt-8">
+        <p className="text-white/50 text-sm">
+          Recommendations powered by Gemini Nano 🤖
+        </p>
       </div>
     </div>
   )
-} 
+}

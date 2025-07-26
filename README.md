@@ -1,11 +1,11 @@
 # Travel Recommendations App
 
-A minimal, modern web app that provides personalized travel destination suggestions through an interactive quiz. Built with React, TypeScript, Tailwind CSS, and Gemini Nano integration.
+A minimal, modern web app that provides personalized travel destination suggestions through an interactive quiz. **Powered by Gemini Nano** for intelligent recommendations.
 
 ## Features
 
+- 🤖 **Gemini Nano integration** for smart, contextual recommendations
 - 🎯 **7-step interactive quiz** with beautiful animations
-- 🤖 **Gemini Nano integration** via `window.ai` Prompt API
 - 📱 **Responsive design** with modern UI/UX
 - ⚡ **Fully client-side** - no backend required
 - 🔄 **Fallback system** - works without LLM
@@ -84,4 +84,4 @@ npm run build
 
 ## License
 
-MIT 
+MIT

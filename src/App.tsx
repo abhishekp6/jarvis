@@ -85,10 +85,10 @@ function App() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg animate-float">
-            {currentEmoji} Travel Recommendations
+            {currentEmoji} Where to Next?
           </h1>
           <p className="text-white/90 text-xl max-w-2xl mx-auto">
-            {personalizedMessage}
+            {personalizedMessage || "Let's find your perfect destination"}
           </p>
         </div>
 
@@ -112,6 +112,13 @@ function App() {
             {getProgressEncouragement(currentStep + 1, questions.length)}
           </p>
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-8">
+        <p className="text-white/50 text-sm">
+          Gemini Nano 🤖
+        </p>
       </div>
     </div>
   )
