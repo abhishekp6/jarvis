@@ -22,9 +22,6 @@ export const ProgressBar = ({ current, total }: ProgressBarProps) => {
         <span className="text-white/90 text-sm font-medium inline-block px-4 py-1 rounded-full bg-white/5">
           {getMessage(progress)}
         </span>
-        <div className="text-white/50 text-xs">
-          Step {current} of {total}
-        </div>
       </div>
       
       {/* Progress bar with softer appearance */}
