@@ -1,5 +1,7 @@
 # Travel Recommendations App
 
+[![Coded with GitHub Copilot](https://img.shields.io/badge/Coded_with-GitHub_Copilot-2ea44f?logo=github)](https://github.com/features/copilot) [![Assisted by Claude](https://img.shields.io/badge/Assisted_by-Claude_Sonnet_3.5-8A2BE2?logo=anthropic)](https://www.anthropic.com/claude)
+
 A minimal, modern web app that provides personalized travel destination suggestions through an interactive quiz. **Powered by Gemini Nano** for intelligent recommendations.
 
 ## Features
